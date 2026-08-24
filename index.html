@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Formly marketing form builder" />
+    <title>Formly — Form Builder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <a class="brand" href="#" aria-label="Formly home"><span class="brand-mark">F</span><span>formly</span></a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#"><span class="nav-icon">⌂</span>Overview</a>
+        <a href="#"><span class="nav-icon">◎</span>Contacts</a>
+        <a href="#" class="active"><span class="nav-icon">▤</span>Forms</a>
+        <a href="#"><span class="nav-icon">✉</span>Emails</a>
+        <a href="#"><span class="nav-icon">⌁</span>Automations</a>
+        <a href="#"><span class="nav-icon">◫</span>Analytics</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <a href="#"><span class="nav-icon">⚙</span>Settings</a>
+        <div class="profile">
+          <div class="avatar">MS</div>
+          <div><strong>Maya Stone</strong><span>maya@formly.co</span></div>
+          <button aria-label="Profile options">•••</button>
+        </div>
+      </div>
+    </aside>
+
+    <main>
+      <header class="topbar">
+        <div class="crumb"><button class="back" aria-label="Back to forms">←</button><div><span>Forms</span><strong>Product waitlist</strong></div></div>
+        <div class="top-actions">
+          <span class="saved"><i></i>All changes saved</span>
+          <button class="icon-btn" id="undo" aria-label="Undo">↶</button>
+          <button class="icon-btn" aria-label="Redo">↷</button>
+          <button class="preview-btn" id="previewButton">◉&nbsp; Preview</button>
+          <button class="publish-btn" id="publishButton">Publish form <span>↗</span></button>
+        </div>
+      </header>
+
+      <section class="workspace">
+        <aside class="blocks-panel">
+          <div class="panel-head"><div><span>Build</span><button class="active">Blocks</button><button>Design</button></div><button class="close-panel" aria-label="Close panel">×</button></div>
+          <label class="search"><span>⌕</span><input id="blockSearch" type="search" placeholder="Search blocks" /></label>
+          <p class="helper">DRAG &amp; DROP</p>
+          <div class="block-grid" id="blockGrid">
+            <button class="block" data-type="heading"><span class="block-symbol">T<span>t</span></span><strong>Heading</strong></button>
+            <button class="block" data-type="text"><span class="block-symbol lines">☰</span><strong>Text</strong></button>
+            <button class="block" data-type="name"><span class="block-symbol">Aa</span><strong>Name</strong></button>
+            <button class="block" data-type="email"><span class="block-symbol">@</span><strong>Email</strong></button>
+            <button class="block" data-type="phone"><span class="block-symbol">⌕</span><strong>Phone</strong></button>
+            <button class="block" data-type="company"><span class="block-symbol">▥</span><strong>Company</strong></button>
+            <button class="block" data-type="dropdown"><span class="block-symbol">⌄</span><strong>Dropdown</strong></button>
+            <button class="block" data-type="checkbox"><span class="block-symbol">☑</span><strong>Checkbox</strong></button>
+            <button class="block" data-type="date"><span class="block-symbol">▣</span><strong>Date</strong></button>
+            <button class="block" data-type="message"><span class="block-symbol">▤</span><strong>Long text</strong></button>
+          </div>
+          <p class="helper second">LAYOUT</p>
+          <div class="layout-list">
+            <button data-type="divider"><span>―</span>Divider</button>
+            <button data-type="spacer"><span>↕</span>Spacer</button>
+            <button data-type="image"><span>▧</span>Image</button>
+          </div>
+        </aside>
+
+        <div class="canvas-wrap">
+          <div class="canvas-toolbar">
+            <div class="device-switch"><button class="active" aria-label="Desktop preview">▰</button><button aria-label="Mobile preview">▯</button></div>
+            <span>100%</span><button>−</button><button>＋</button>
+          </div>
+          <div class="canvas" id="canvas">
+            <form class="form-card" id="signupForm">
+              <div class="form-brand"><span class="brand-mark small">F</span><span>formly</span></div>
+              <div class="editable-block selected" data-kind="heading">
+                <div class="block-tools"><button type="button" class="drag">⠿</button><button type="button" class="duplicate">▣</button><button type="button" class="delete">⌫</button></div>
+                <h1 contenteditable="true">Join the waitlist</h1>
+              </div>
+              <div class="editable-block" data-kind="text"><p contenteditable="true">Be the first to know when we launch. Get early access, product updates, and a little something special.</p></div>
+              <div class="field-row editable-block" data-kind="name">
+                <label>First name<input name="firstName" placeholder="Maya" required /></label>
+                <label>Last name<input name="lastName" placeholder="Stone" required /></label>
+              </div>
+              <div class="editable-block" data-kind="email"><label>Email address<input name="email" type="email" placeholder="maya@company.com" required /></label></div>
+              <div class="editable-block" data-kind="company"><label>Company <span class="optional">Optional</span><input name="company" placeholder="Your company" /></label></div>
+              <div class="editable-block" data-kind="dropdown"><label>What best describes your role?<select name="role"><option value="">Select your role</option><option>Founder</option><option>Marketing</option><option>Product</option><option>Engineering</option></select></label></div>
+              <button class="submit-button" type="submit">Join the waitlist <span>→</span></button>
+              <p class="privacy">By submitting, you agree to receive marketing emails. Unsubscribe anytime.</p>
+            </form>
+            <div class="add-line"><span></span><button id="quickAdd">＋</button><span></span></div>
+          </div>
+        </div>
+
+        <aside class="settings-panel">
+          <div class="settings-head"><strong>Heading</strong><button aria-label="Close settings">×</button></div>
+          <div class="setting-group">
+            <label>Content<textarea id="headingContent" rows="3">Join the waitlist</textarea></label>
+          </div>
+          <div class="setting-group">
+            <label>Heading size<div class="segmented"><button data-size="h2">S</button><button class="active" data-size="h1">M</button><button data-size="display">L</button></div></label>
+            <label>Alignment<div class="segmented align"><button class="active" data-align="left">≡</button><button data-align="center">≣</button><button data-align="right">≡</button></div></label>
+          </div>
+          <div class="setting-group">
+            <div class="setting-row"><span>Text color</span><button class="color-value"><i></i>#18221B</button></div>
+          </div>
+          <div class="setting-group">
+            <div class="setting-row"><span>Spacing</span><span class="unit">px</span></div>
+            <div class="spacing-controls"><label>Top<input type="number" value="0" /></label><label>Bottom<input type="number" value="16" /></label></div>
+          </div>
+          <div class="setting-group tips">
+            <span class="bulb">✦</span><div><strong>Make it clear &amp; compelling</strong><p>A great heading tells visitors exactly what they’ll get.</p></div>
+          </div>
+          <button class="delete-block" id="deleteSelected">⌫ &nbsp; Delete block</button>
+        </aside>
+      </section>
+    </main>
+    <div class="toast" id="toast" role="status"><span>✓</span><div><strong>Form published</strong><small>Your form is live and ready to collect leads.</small></div></div>
+    <script src="app.js"></script>
+  </body>
+</html>
